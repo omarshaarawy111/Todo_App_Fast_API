@@ -11,7 +11,7 @@ from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 
 from models import Base
-from tarlette import status
+from starlette import status
 
 from routers import auth, todos, admin, users
 
