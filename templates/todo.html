@@ -1,0 +1,83 @@
+
+{% include "layout.html" %}
+<div class="container">
+    <div class="card text-centere">
+        <div class="card-header">
+            Your Todos
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">
+                List of your todos
+            </h5>
+            <p class="card-text">
+                Todos to be completed
+            </p>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+
+                        <th scope="col">#</th>
+                        <th scope="col">Info</th>
+                        <th scope="col">Actions</th>
+                        {% if user.get("role") == "Admin" %}
+                            <th scope="col">Owner</th>
+                        {% endif %}
+                    </tr>
+                </thead>
+
+                <tbody>
+                {% for todo in todos %}
+                {% if todo.complete == False %}
+                <tr class="pointer">
+                    <td>
+                        {{ loop.index }}
+                    </td>
+                    <td>
+                        {{ todo.title }}
+                    </td>
+                    {% if user.get("role") != "Admin" or todo.owner_id == user.get("id") %}
+                    <td>
+                        <button onclick="window.location.href='edit-todo/{{todo.id}}'" type="button" class="btn btn-info">Edit</button>
+                    </td>
+                    {% else %}
+                    <td>
+                        x
+                    </td>
+                    {% endif %}
+                    {% if user.get("role") == "Admin" %}
+                    <td>
+                        {{ todo.owner_id }}
+                    </td>
+                    {% endif %}
+                </tr>
+                {% else %}
+                <tr class="pointer alert alert-success">
+                    <td>
+                        {{ loop.index }}
+                    </td>
+                    <td  class="strike-through-td">
+                        {{ todo.title }}
+                    </td>
+                    {% if user.get("role") != "Admin" or todo.owner_id == user.get("id") %}
+                    <td>
+                        <button onclick="window.location.href='edit-todo/{{todo.id}}'" type="button" class="btn btn-info">Edit</button>
+                    </td>
+                    {% else %}
+                    <td>
+                        x
+                    </td>
+                    {% endif %}
+                    {% if user.get("role") == "Admin" %}
+                    <td>
+                        {{ todo.owner_id }}
+                    </td>
+                    {% endif %}
+                </tr>
+                {% endif %}
+                {% endfor %}
+                </tbody>
+            </table>
+            <a href="add-todo" class="btn btn-primary">Add a new Todo</a>
+        </div>
+    </div>
+</div>
