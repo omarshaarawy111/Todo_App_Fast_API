@@ -19,7 +19,7 @@ from models import Todos
 
 from database import get_db
 
-from auth import get_current_user
+from routers.auth import get_current_user
 
 from fastapi.templating import Jinja2Templates
 
