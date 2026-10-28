@@ -45,7 +45,7 @@ From the directory that contains `Todo_App_Fast_API`, run:
 uvicorn Todo_App_Fast_API.main:app --reload
 ```
 
-Open [Todo App](http://127.0.0.1:8000](https://todo-app-fast-api.onrender.com/)) in a browser.
+Open [Todo App](https://todo-app-fast-api.onrender.com) in a browser.
 
 ## Database migrations
 
