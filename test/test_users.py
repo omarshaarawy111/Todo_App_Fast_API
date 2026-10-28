@@ -12,7 +12,7 @@ from database import get_db
 from routers.auth import get_current_user
 from starlette import status
 
-from ..models import Users
+from models import Users
 
 app.dependency_overrides[get_db] = override_get_db
 app.dependency_overrides[get_current_user] = override_get_current_user
