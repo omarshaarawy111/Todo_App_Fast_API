@@ -17,9 +17,9 @@ from typing import Annotated
 
 from sqlalchemy.orm import Session
 
-from ..models import Users
+from models import Users
 
-from ..database import get_db
+from database import get_db
 
 from passlib.context import CryptContext
 

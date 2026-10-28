@@ -15,13 +15,13 @@ from typing import Annotated
 
 from sqlalchemy.orm import Session
 
-from ..models import Users
+from models import Users
 
-from ..database import get_db
+from database import get_db
 
 from passlib.context import CryptContext
 
-from .auth import get_current_user, bcrypt_context
+from auth import get_current_user, bcrypt_context
 
 router = APIRouter(
      prefix='/users',

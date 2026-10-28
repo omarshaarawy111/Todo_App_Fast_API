@@ -13,11 +13,11 @@ from typing import Annotated
 
 from sqlalchemy.orm import Session
 
-from ..models import Todos
+from models import Todos
 
-from ..database import get_db
+from database import get_db
 
-from .auth import get_current_user
+from auth import get_current_user
 
 router = APIRouter(
      prefix='/admin',
