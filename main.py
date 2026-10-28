@@ -10,12 +10,12 @@ from fastapi import FastAPI, Request
 
 from fastapi.responses import HTMLResponse
 
-from .models import Base
+from models import Base
 from starlette import status
 
-from .routers import auth, todos, admin, users
+from routers import auth, todos, admin, users
 
-from .database import engine
+from database import engine
 
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import RedirectResponse
