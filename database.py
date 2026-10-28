@@ -10,7 +10,11 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import declarative_base
 
-SQLALCHEMY_DATABASE_URL = 'sqlite:///./todos.db'
+# In case of SQLite
+# SQLALCHEMY_DATABASE_URL = 'sqlite:///./todos.db'
+# In case of PostgreSQL
+SQLALCHEMY_DATABASE_URL = 'postgresql://neondb_owner:npg_MSs1caCV3UjI@ep-aged-queen-ax7sro5d-pooler.c-4.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
+
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={'check_same_thread': False})
 
