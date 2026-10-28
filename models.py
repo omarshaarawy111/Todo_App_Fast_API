@@ -41,8 +41,8 @@ class Todos(Base):
         A SQLAlchemy model mapped to the todos table.
     """
 
-    __tablename__ = 'todos'
-
+    __tablename__ = 'todos'  
+    
     id = Column(Integer, primary_key=True, index=True)
 
     title = Column(String)
