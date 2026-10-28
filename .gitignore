@@ -16,10 +16,7 @@ htmlcov/
 .env.*
 !.env.example
 
-*.db
-*.sqlite
-*.sqlite3
-database.db
+
 
 .vscode/
 .idea/
