@@ -5,11 +5,11 @@ Description:
     This module verifies user information and account update operations.
 """
 
-from .utils import *
+from utils import *
 
-from ..database import get_db
+from database import get_db
 
-from ..routers.auth import get_current_user
+from routers.auth import get_current_user
 from starlette import status
 
 from ..models import Users

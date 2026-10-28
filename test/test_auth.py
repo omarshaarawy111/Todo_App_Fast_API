@@ -5,18 +5,18 @@ Description:
     This module verifies user creation, token handling, and login behavior.
 """
 
-from .utils import *
+from utils import *
 
-from ..database import get_db
+from database import get_db
 
-from ..routers.auth import authenticate_user, create_access_token, SECRET_KEY, ALGORITHM, get_current_user
+from routers.auth import authenticate_user, create_access_token, SECRET_KEY, ALGORITHM, get_current_user
 
 from jose import jwt, JWTError
 
 from datetime import timedelta, datetime, timezone
 from starlette import status
 
-from ..models import Users
+from models import Users
 
 import pytest
 

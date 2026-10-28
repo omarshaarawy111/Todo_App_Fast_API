@@ -7,7 +7,7 @@ Description:
 
 from fastapi.testclient import TestClient
 
-from ..main import app
+from main import app
 from starlette import status
 
 client = TestClient(app)

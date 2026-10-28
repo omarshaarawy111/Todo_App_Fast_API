@@ -9,17 +9,17 @@ Description:
 from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker
 
-from ..database import Base
+from database import Base
 
 from fastapi.testclient import TestClient
 
-from ..main import app
+from main import app
 
 import pytest
 
-from ..models import Todos, Users
+from models import Todos, Users
 
-from ..routers.auth import bcrypt_context
+from routers.auth import bcrypt_context
 
 SQLALCHEMY_DATABASE_URL = 'sqlite:///./testdb.db'
 
