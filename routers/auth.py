@@ -109,7 +109,6 @@ def render_register_page(request: Request):
 
     return templates.TemplateResponse("register.html", {"request": request})
 
-@router.post("", status_code=status.HTTP_201_CREATED)
 @router.post("/create-user", status_code=status.HTTP_201_CREATED)
 async def create_user(db: db_dependency, user_request: CreateUserRequest):
     """
