@@ -186,11 +186,21 @@
                     body: JSON.stringify(payload)
                 });
 
+                const responseData = await response.json();
+
+                console.log("Registration status:", response.status);
+                console.log("Registration response:", responseData);
+
                 if (response.ok) {
                     window.location.href = '/auth/login';
                 } else {
-                    const errorData = await response.json();
-                    alert(`Error: ${errorData.message}`);
+                    alert(
+                        `Error ${response.status}: ${
+                            responseData.detail ||
+                            responseData.message ||
+                            JSON.stringify(responseData)
+                        }`
+                    );
                 }
             } catch (error) {
                 console.error('Error:', error);
